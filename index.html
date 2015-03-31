@@ -4,40 +4,44 @@
 <head>
   <script src="lib/TweenMax.min.js"></script>
   <script src="lib/angular.js"></script>
+  <script src="lib/angular-swipe.js"></script>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js"></script>
 </head>
 
 <body>
-  <card>
-    <card-title class="center">
-      <button class="left">prev</button>
-      This is card
-      <button class="right">next</button>
-    </card-title>
-    <card-content>
-      <div card-image src="img/pizza-1.jpeg"></div>
-      <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corrupti, sunt, architecto perferendis vitae tenetur voluptate illum labore itaque nihil quos assumenda tempora veniam hic corporis eaque unde nostrum nisi!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corrupti, sunt, architecto perferendis vitae tenetur voluptate illum labore itaque nihil quos assumenda tempora veniam hic corporis eaque unde nostrum nisi!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corrupti, sunt, architecto perferendis vitae tenetur voluptate illum labore itaque nihil quos assumenda tempora veniam hic corporis eaque unde nostrum nisi!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corrupti, sunt, architecto perferendis vitae tenetur voluptate illum labore itaque nihil quos assumenda tempora veniam hic corporis eaque unde nostrum nisi!</p>
-      </div>
-    </card-content>
+  <card img="img/pizza-1.jpeg" text="This is card">
   </card>
-
 
   <script type="text/ng-template" id="card.html">
     <div class="css-card">
-      <div class="css-card-transclude" ng-transclude=""></div>
+      <div class="css-card-transclude">
+        <card-title class="center">
+          <button class="left">prev</button>
+            {{text}}
+          <button class="right">next</button>
+        </card-title>
+        <card-content>
+        <div card-image src="{{img}}">
+          <div class="card-image-title">
+            <span class="card-text">El passo</span>
+            <span class="card-text">Изысканный вкус для настоящих гурманов</span>
+          </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corrupti, sunt, architecto perferendis vitae tenetur voluptate illum labore itaque nihil quos assumenda tempora veniam hic corporis eaque unde nostrum nisi!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corrupti, sunt, architecto perferendis vitae tenetur voluptate illum labore itaque nihil quos assumenda tempora veniam hic corporis eaque unde nostrum nisi!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corrupti, sunt, architecto perferendis vitae tenetur voluptate illum labore itaque nihil quos assumenda tempora veniam hic corporis eaque unde nostrum nisi!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corrupti, sunt, architecto perferendis vitae tenetur voluptate illum labore itaque nihil quos assumenda tempora veniam hic corporis eaque unde nostrum nisi!</p>
+      </card-content>
     </div>
-  </script>
-  <script type="text/ng-template" id="card-title.html">
-    <div class="css-card-title-transclude" ng-transclude=""></div>
-  </script>
-  <script type="text/ng-template" id="card-content.html">
-    <div class="css-card-content-transclude" ng-transclude=""></div>
-  </script>
+  </div>
+</script>
+<script type="text/ng-template" id="card-title.html">
+  <div class="css-card-title-transclude" ng-transclude=""></div>
+</script>
+<script type="text/ng-template" id="card-content.html">
+  <div class="css-card-content-transclude" ng-transclude=""></div>
+</script>
 </body>
 
 </html>
