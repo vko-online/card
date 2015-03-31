@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="card">
+
+<head>
+  <script src="lib/TweenMax.min.js"></script>
+  <script src="lib/angular.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <card>
+    <card-title class="center">
+      <button class="left">prev</button>
+      This is card
+      <button class="right">next</button>
+    </card-title>
+    <card-content>
+      <div card-image src="img/pizza-1.jpeg"></div>
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corrupti, sunt, architecto perferendis vitae tenetur voluptate illum labore itaque nihil quos assumenda tempora veniam hic corporis eaque unde nostrum nisi!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corrupti, sunt, architecto perferendis vitae tenetur voluptate illum labore itaque nihil quos assumenda tempora veniam hic corporis eaque unde nostrum nisi!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corrupti, sunt, architecto perferendis vitae tenetur voluptate illum labore itaque nihil quos assumenda tempora veniam hic corporis eaque unde nostrum nisi!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, corrupti, sunt, architecto perferendis vitae tenetur voluptate illum labore itaque nihil quos assumenda tempora veniam hic corporis eaque unde nostrum nisi!</p>
+      </div>
+    </card-content>
+  </card>
+
+
+  <script type="text/ng-template" id="card.html">
+    <div class="css-card">
+      <div class="css-card-transclude" ng-transclude=""></div>
+    </div>
+  </script>
+  <script type="text/ng-template" id="card-title.html">
+    <div class="css-card-title-transclude" ng-transclude=""></div>
+  </script>
+  <script type="text/ng-template" id="card-content.html">
+    <div class="css-card-content-transclude" ng-transclude=""></div>
+  </script>
+</body>
+
+</html>
